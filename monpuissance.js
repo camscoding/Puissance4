@@ -46,19 +46,64 @@ const jeu = (tab) => {
 
 
 const position = (play, tab) => {
+    let lastInd = getLastInd(tab, play);
     if (play === 1) {
-        tab[5][0] = 'a';
+        tab[lastInd][0] = 'a';
     } else if (play === 2) {
-        tab[5][1] = 'a';
+        tab[lastInd][1] = 'a';
     } else if (play === 3) {
-        tab[5][2] = 'a';
+        tab[lastInd][2] = 'a';
     } else if (play === 4) {
-        tab[5][3] = 'a';
+        tab[lastInd][3] = 'a';
     } else if (play === 5) {
-        tab[5][4] = 'a';
+        tab[lastInd][4] = 'a';
     } else if (play === 6 ) {
-        tab[5][5] = 'a';
-    } else {
-        tab[5][6] = 'a';
+        tab[lastInd][5] = 'a';
+    } else  {
+        tab[lastInd][6] = 'a';
     }
 }
+
+
+const getLastInd = (tab, play) => {
+    for (i = 5; i >= 0; i--) {  
+        if (tab[i][play - 1] === '  ') {
+            return i
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const getLastInd = (tab, play) => {
+//     for (let i = 5; i >= 0; i--) {
+//         if (tab[i][play - 1] === '  ') {
+//             return i;
+//         }
+//     }
+// }
