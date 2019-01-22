@@ -21,14 +21,14 @@ const startGame = () => {
         ['  ','  ','  ','  ','  ','  ','  '],
         ['  ','  ','  ','  ','  ','  ','  '],
     ];
-    let played = jeu(grid);
-    position(played, grid);
-    played = jeu(grid);
-    position(played, grid);
-    played = jeu(grid);
-    position(played, grid);
-    played = jeu(grid);
-    position(played, grid);
+    
+    let playedValue;
+for ( i = 0 ; i <= 42 ; i++) {
+    playedValue = jeu(grid);
+    position(playedValue,grid);
+
+}
+
 }
     
 const jeu = (tab) => {
@@ -59,8 +59,10 @@ const position = (play, tab) => {
         tab[lastInd][4] = 'a';
     } else if (play === 6 ) {
         tab[lastInd][5] = 'a';
-    } else  {
+    } else  if (play === 7 ){
         tab[lastInd][6] = 'a';
+    } else {
+        console.error('Mauvaise valeur de colone entrée !');
     }
 }
 
@@ -72,8 +74,6 @@ const getLastInd = (tab, play) => {
         }
     }
 }
-
-
 
 
 
